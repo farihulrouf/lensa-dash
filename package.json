@@ -14,6 +14,7 @@
     "core-js": "^3.30.2",
     "datatables.net-dt": "^2.0.7",
     "datatables.net-vue3": "^3.0.1",
+    "dotenv": "^16.4.5",
     "vue": "^3.3.4",
     "vue-multiselect": "^3.0.0",
     "vue-router": "^4.0.13"

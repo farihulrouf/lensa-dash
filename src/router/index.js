@@ -39,6 +39,18 @@ const routes = [
         path: "/pengadaan-seleksi", // Define the path for the Monitoring page
         component: () => import("../views/Seleksi.vue"), // Import the Monitoring component
       },
+      {
+        path: "/purchasing", // Define the path for the Monitoring page
+        component: () => import("../views/Purchasing.vue"), // Import the Monitoring component
+      },
+      {
+        path: "/penunjukan-langsung", // Define the path for the Monitoring page
+        component: () => import("../views/PenunjukanLangsung.vue"), // Import the Monitoring component
+      },
+      {
+        path: "/swakelola", // Define the path for the Monitoring page
+        component: () => import("../views/Swakelola.vue"), // Import the Monitoring component
+      },
     ],
   },
 ];

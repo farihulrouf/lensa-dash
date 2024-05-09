@@ -59,6 +59,48 @@
         </div>
       </div>
     </div>
+
+
+     <!-- Second Row -->
+     <div class="flex mb-4">
+      <!-- First column -->
+      <div class="w-1/3 mr-2">
+        <!-- First column content -->
+        <div class="bg-gray-200 p-4">
+          <h2 class="text-lg font-semibold mb-2">Penunjukan Langsung</h2>
+          <!-- Link to Pengadaan Langsung page -->
+          <router-link
+            to="/penunjukan-langsung"
+            class="text-blue-500 hover:underline"
+            >Go to Penunjukan Langsung</router-link
+          >
+        </div>
+      </div>
+      <!-- Second column -->
+      <div class="w-1/3 mx-2">
+        <!-- Second column content -->
+        <div class="bg-gray-200 p-4">
+          <h2 class="text-lg font-semibold mb-2">Purchasing</h2>
+          <!-- Link to Pengadaan Seleksi page -->
+          <router-link
+            to="/purchasing"
+            class="text-blue-500 hover:underline"
+            >Purchasing</router-link
+          >
+        </div>
+      </div>
+      <!-- Third column -->
+      <div class="w-1/3 ml-2">
+        <!-- Third column content -->
+        <div class="bg-gray-200 p-4">
+          <h2 class="text-lg font-semibold mb-2">Swakelola</h2>
+          <!-- Link to Tender page -->
+          <router-link to="/swakelola" class="text-blue-500 hover:underline"
+            >Go to SwaKelola</router-link
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
