@@ -1,5 +1,7 @@
 <template>
     <div class="container mx-auto">
+      <h1 class="text-3xl font-bold mb-4">Seleksi</h1>
+
       <table id="example" class="stripe hover" style="width: 100%">
         <thead>
           <tr>
