@@ -1,0 +1,51 @@
+/* Basic DataTables CSS example */
+
+/* Table */
+table.dataTable {
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Table Header */
+table.dataTable thead th {
+    padding: 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table Body */
+table.dataTable tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table Footer */
+table.dataTable tfoot th {
+    padding: 8px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+
+/* Pagination */
+.dataTables_paginate {
+    text-align: right;
+    padding-top: 1em;
+}
+
+.dataTables_paginate a {
+    padding: 0.5em;
+    text-decoration: none;
+    color: #333;
+}
+
+.dataTables_paginate a.paginate_button {
+    margin-right: 0.5em;
+}
+
+.dataTables_paginate a.paginate_button.current {
+    font-weight: bold;
+    background-color: #eee;
+}

@@ -27,6 +27,10 @@ const routes = [
         path: "/laporan", // Define the path for the Monitoring page
         component: () => import("../views/Laporan.vue"), // Import the Monitoring component
       },
+      {
+        path: "/pengadaanlangsung", // Define the path for the Monitoring page
+        component: () => import("../views/PengadaanLangsung.vue"), // Import the Monitoring component
+      },
     ],
   },
 ];

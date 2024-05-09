@@ -1,44 +1,61 @@
 <template>
-    <div>
-      <!-- Page Header -->
-      <h1 class="text-2xl font-bold mb-4">Pengadaan Langsung</h1>
-  
-      <!-- Pengadaan Langsung Form -->
-      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <!-- Form Fields -->
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="nama_proyek">
-            Nama Proyek
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="nama_proyek"
-            type="text"
-            placeholder="Nama Proyek"
-          >
-        </div>
-        <!-- Add more form fields as needed -->
-  
-        <!-- Submit Button -->
-        <div class="flex items-center justify-between">
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'PengadaanLangsung',
-  };
-  </script>
-  
-  <style scoped>
-  /* Add any custom styles here */
-  </style>
-  
+  <div class="container mx-auto">
+    <table id="example" class="stripe hover" style="width:100%">
+      <thead>
+        <tr>
+          <th>Kode RUP</th>
+          <th>Satuan Kerja</th>
+          <th>Nama Paket</th>
+          <th>Metode Pengadaan</th>
+          <th>Tanggal Kontrak</th>
+          <th>Awal Pelaksanaan</th>
+          <th>Akhir Pelaksanaan</th>
+          <th>Nilai Kontrak</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in items" :key="item.id">
+          <td>{{ item.kodeRUP }}</td>
+          <td>{{ item.satuanKerja }}</td>
+          <td>{{ item.namaPaket }}</td>
+          <td>{{ item.metodePengadaan }}</td>
+          <td>{{ item.tanggalKontrak }}</td>
+          <td>{{ item.awalPelaksanaan }}</td>
+          <td>{{ item.akhirPelaksanaan }}</td>
+          <td>{{ item.nilaiKontrak }}</td>
+          <td>{{ item.progress }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+import $ from 'jquery';
+import 'datatables.net';
+import '../assets/datatable.css'
+//import '@/assets/css/dataTables.dataTables.css'; // Import DataTables CSS file
+
+export default {
+  name: 'PengadaanLangsung',
+  data() {
+    return {
+      items: [
+        { id: 1, kodeRUP: 'K001', satuanKerja: 'Dinas Pekerjaan Umum', namaPaket: 'Pembangunan Jalan Raya', metodePengadaan: 'E-Tendering', tanggalKontrak: '2024-01-01', awalPelaksanaan: '2024-02-01', akhirPelaksanaan: '2024-06-01', nilaiKontrak: 'Rp 500.000.000', progress: '50%' },
+        { id: 2, kodeRUP: 'K002', satuanKerja: 'Dinas Lingkungan Hidup', namaPaket: 'Pengelolaan Limbah', metodePengadaan: 'Tender', tanggalKontrak: '2024-03-15', awalPelaksanaan: '2024-04-01', akhirPelaksanaan: '2024-09-01', nilaiKontrak: 'Rp 300.000.000', progress: '25%' },
+        // Add more items as needed
+      ],
+    };
+  },
+  mounted() {
+    $(document).ready(() => {
+      $('#example').DataTable();
+    });
+  }
+}
+</script>
+
+<style scoped>
+/* Add any custom styling here */
+</style>
