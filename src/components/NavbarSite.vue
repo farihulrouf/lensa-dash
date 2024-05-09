@@ -9,11 +9,11 @@
       </div>
       <div class="flex items-center">
         <!-- Unit select component -->
-        <multiselect v-model="selectedUnit" :options="units" placeholder="Select unit" class="px-4 py-2 rounded-md bg-white text-black" />
+        <multiselect v-model="selectedUnit" :options="units" placeholder="Select unit" class="px-4 py-2 rounded-md bg-white text-black" @input="handleUnitChange" />
       </div>
       <div class="flex items-center ml-4">
         <!-- Year select component -->
-        <multiselect v-model="selectedYear" :options="years" placeholder="Select year" class="px-4 py-2 rounded-md bg-white text-black" />
+        <multiselect v-model="selectedYear" :options="years" placeholder="Select year" class="px-4 py-2 rounded-md bg-white text-black" @input="handleYearChange" />
       </div>
     </div>
   </header>
@@ -40,5 +40,15 @@ export default {
       ],
     };
   },
+  methods: {
+    handleUnitChange() {
+      console.log("Selected Unit:", this.selectedUnit);
+      // Perform any action based on the selected unit
+    },
+    handleYearChange() {
+      console.log("Selected Year:", this.selectedYear);
+      // Perform any action based on the selected year
+    }
+  }
 }
 </script>
