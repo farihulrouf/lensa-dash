@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-blue-500 text-white p-4">
+  <header class="bg-blue-500 text-white p-4 h-16">
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <router-link to="/" class="text-xl font-semibold">My App</router-link>
@@ -9,11 +9,11 @@
       </div>
       <div class="flex items-center">
         <!-- Unit select component -->
-        <multiselect v-model="selectedUnit" :options="units" placeholder="Select unit" class="px-4 py-2 rounded-md bg-white text-black" @input="handleUnitChange" />
+        <multiselect v-model="selectedUnitValue" :options="units" placeholder="Select unit" class="px-4 py-2 rounded-md bg-white text-black" @input="updateSelectedUnit" />
       </div>
       <div class="flex items-center ml-4">
         <!-- Year select component -->
-        <multiselect v-model="selectedYear" :options="years" placeholder="Select year" class="px-4 py-2 rounded-md bg-white text-black" @input="handleYearChange" />
+        <multiselect v-model="selectedYearValue" :options="years" placeholder="Select year" class="px-4 py-2 rounded-md bg-white text-black" @input="updateSelectedYear" />
       </div>
     </div>
   </header>
@@ -21,16 +21,34 @@
 
 <script>
 import Multiselect from 'vue-multiselect';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   components: {
     Multiselect,
   },
+  computed: {
+    ...mapState(['selectedYear', 'selectedUnit']),
+    selectedYearValue: {
+      get() {
+        return this.selectedYear;
+      },
+      set(value) {
+        this.updateSelectedYear(value);
+      }
+    },
+    selectedUnitValue: {
+      get() {
+        return this.selectedUnit;
+      },
+      set(value) {
+        this.updateSelectedUnit(value);
+      }
+    }
+  },
   data() {
     return {
-      selectedYear: new Date().getFullYear(), // default value is the current year
-      years: [2021, 2022, 2023, 2024], // list of available years
-      selectedUnit: "All", // default value is "All" for unit
+      years: [2021, 2022, 2023, 2024],
       units: [
         "All",
         "BADAN KEPEGAWAIAN DAERAH DAN PENGEMBANGAN SUMBER DAYA MANUSIA",
@@ -41,14 +59,9 @@ export default {
     };
   },
   methods: {
-    handleUnitChange() {
-      console.log("Selected Unit:", this.selectedUnit);
-      // Perform any action based on the selected unit
-    },
-    handleYearChange() {
-      console.log("Selected Year:", this.selectedYear);
-      // Perform any action based on the selected year
-    }
+    ...mapActions(['updateSelectedYear', 'updateSelectedUnit']),
   }
 }
 </script>
+
+<style src="vue-multiselect/dist/vue-multiselect.css"></style>
